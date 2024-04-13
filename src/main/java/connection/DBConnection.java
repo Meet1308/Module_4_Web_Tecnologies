@@ -17,4 +17,18 @@ public class DBConnection {
 		
 		return conn;
 	}
+	
+	public static Connection createConnectionMsg() {
+		Connection conn = null;
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/message", "root", "");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return conn;
+	}
 }
